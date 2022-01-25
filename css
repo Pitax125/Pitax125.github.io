@@ -1,4 +1,6 @@
-*, *:after, *:before {
+*,
+*:after,
+*:before {
 	box-sizing: border-box;
 }
 
@@ -7,7 +9,7 @@ body {
 	background-color: #f2f5f7;
 }
 
-// Codepen spesific styling - only to center the elements in the pen preview and viewport 
+// Codepen spesific styling - only to center the elements in the pen preview and viewport
 .container {
 	position: absolute;
 	top: 0;
@@ -29,11 +31,11 @@ body {
 	max-width: 400px;
 	position: relative;
 	padding: 2rem;
-	box-shadow: inset 0 0 0 4px #000, inset -4px -4px 0 6px #CCC;
-	background-color: #FFF;
-	cursor: pointer; 
+	box-shadow: inset 0 0 0 4px #000, inset -4px -4px 0 6px #ccc;
+	background-color: #fff;
+	cursor: pointer;
 	&:before {
-		position: absolute; 
+		position: absolute;
 		left: 0;
 		bottom: 0;
 		content: "";
@@ -43,17 +45,121 @@ body {
 		background-color: #000;
 		transform-origin: 0 bottom 0;
 		transform: scaleY(0);
-		transition: .4s ease-out;
+		transition: 0.4s ease-out;
 	}
-	
+
 	&:hover {
 		.post-title {
-			color: #FFF;
+			color: #fff;
 		}
 		&:before {
 			transform: scaleY(1);
 		}
 	}
+}
+*{
+  box-sizing: border-box;
+}
+.container {
+  align-items: center;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+.item{
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #eee;
+  display: flex;
+  height: 400px;
+  justify-content: center;
+  position: relative;
+  width: 400px;
+  z-index: 1000;
+  img{
+    object-fit: cover;
+    height: 400px;
+    width: 400px;
+  }
+  &::before, &::after {
+    background-image: linear-gradient(-180deg, #A1DEFF 0%, #5EA3DB 97%);
+    content: '';
+    height: 100%;
+    position: absolute;
+    transition: all .2s;
+    transition-delay: .2s;
+    transform: translateY(0px) translateX(0px);
+    width: 100%;
+    z-index: -1;
+  }
+  &::after {
+    background-image: linear-gradient(0deg, #FFCF70 0%, #FFAE3D 97%);
+  }
+  &:hover{
+    animation-name: hoverPop;
+    animation-duration: .4s;
+    animation-fill-direction: forward;
+    img{  
+      box-shadow: 2px 2px 4px 0px rgba(10,12,15,0.27);
+      box-shadow: 0px 0px 30px 0px rgba(10,12,15,0.27);
+    }
+    &::before{
+      animation: slick-hover-2 3s .4s linear infinite;
+      transform: translateY(-20px) translateX(-20px);
+    }
+    &::after{
+      animation: slick-hover 3s .4s linear infinite reverse;
+      transform: translateY(20px) translateX(20px);
+    }
+  }
+}
+
+@keyframes hoverPop {
+  0%, 100% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(1.05);
+  }
+  66% {
+    transform: scale(.90);
+  }
+}
+
+@keyframes slick-hover {
+  0.00% {
+    transform: translateY(20px) translateX(20px) }
+  16.67% {
+    transform: translateY(-13px) translateX(-9px) }
+  33.33% {
+    transform: translateY(4px) translateX(12px) }
+  50.00% {
+    transform: translateY(20px) translateX(-20px) }
+  66.67% {
+    transform: translateY(-3px) translateX(8px) }
+  83.33% {
+    transform: translateY(-15px) translateX(-11px) }
+  100.00% {
+    transform: translateY(20px) translateX(20px) }
+}
+
+@keyframes slick-hover-2 {
+  0.00% {
+    transform: translateY(-20px) translateX(-20px) }
+  16.67% {
+    transform: translateY(3px) translateX(-5px) }
+  33.33% {
+    transform: translateY(18px) translateX(-10px) }
+  50.00% {
+    transform: translateY(-20px) translateX(20px) }
+  66.67% {
+    transform: translateY(15px) translateX(-4px) }
+  83.33% {
+    transform: translateY(-1px) translateX(15px) }
+  100.00% {
+    transform: translateY(-20px) translateX(-20px) }
 }
 
 .post-title {
@@ -61,5 +167,23 @@ body {
 	font-size: 2rem;
 	font-weight: 700;
 	line-height: 1.333;
-	transition: .4s ease-out;
+	transition: 0.4s ease-out;
+}
+
+
+#header {
+  max-width: 480px;
+  max-height: 135px;
+  background: green;
+  text-align: center;
+  padding: 0;
+}
+
+#logoContainer {
+  width: 75%;
+  margin: 0 auto;
+}  
+
+#logo {
+  width: 100%; 
 }
