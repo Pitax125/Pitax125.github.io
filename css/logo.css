@@ -1,0 +1,16 @@
+#header {
+  max-width: 480px;
+  max-height: 135px;
+  background: green;
+  text-align: center;
+  padding: 0;
+}
+
+#logoContainer {
+  width: 75%;
+  margin: 0 auto;
+}  
+
+#logo {
+  width: 100%; 
+}
