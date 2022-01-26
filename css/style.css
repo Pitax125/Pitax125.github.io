@@ -82,7 +82,7 @@ a {
   position: relative;
 }
 #soft2 {
-  color: gray;
+  color: grey;
 }
 @media (min-height: 830px) {
   #hero {
